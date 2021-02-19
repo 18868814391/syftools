@@ -7,6 +7,7 @@ const timeEver=require('../dist/index').timeEver;
 const recentDay=require('../dist/index').recentDay;
 const futureDay=require('../dist/index').futureDay;
 const numberFormat=require('../dist/index').numberFormat;
+const fromHex=require('../dist/index').fromHex;
 
 // describe('syf function test_add', () => {
 //   it('test_add', () => {
@@ -50,9 +51,16 @@ const numberFormat=require('../dist/index').numberFormat;
 //   });
 // });
 
-describe('syf function test_numberFormat', () => {
-  it('test_numberFormat', () => {
-    const result = numberFormat(152634.23);
+// describe('syf function test_numberFormat', () => {
+//   it('test_numberFormat', () => {
+//     const result = numberFormat(152634.23);
+//     console.log(result)
+//   });
+// });
+
+describe('syf function test_fromHex', () => {
+  it('test_fromHex', () => {
+    const result = fromHex('#ff0000');
     console.log(result)
   });
 });

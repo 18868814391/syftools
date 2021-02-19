@@ -126,11 +126,30 @@ function numberFormat(value:number) : string{
   return r  
 }
 
+function fromHex(hex:string) : Object{
+  //将css的16进制颜色属性值，转变为rgb格式的对像  传入 #ff0000  输出{ b: 0, g: 0, r: 255, a: 1 }
+  var t:any = {},
+    bits = hex.length == 4 ? 4 : 8,
+    mask = (1 << bits) - 1
+  let color = Number('0x' + hex.substr(1))
+  if (isNaN(color)) {
+    return {}
+  }
+  ['b', 'g', 'r'].forEach(function(x) {
+    var c = color & mask
+    color >>= bits
+    t[x] = bits == 4 ? 17 * c : c
+  })
+  t.a = 1
+  return t  
+}
+
 export {
   timeStamp,
   dateString,
   timeEver,
   recentDay,
   futureDay,
-  numberFormat
+  numberFormat,
+  fromHex
 }

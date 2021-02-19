@@ -5,4 +5,5 @@ declare function timeEver(timeData: string): string;
 declare function recentDay(days: number, strict?: boolean, appoint?: string): string[];
 declare function futureDay(days: number, strict?: boolean, appoint?: string): string[];
 declare function numberFormat(value: number): string;
-export { timeStamp, dateString, timeEver, recentDay, futureDay, numberFormat };
+declare function fromHex(hex: string): Object;
+export { timeStamp, dateString, timeEver, recentDay, futureDay, numberFormat, fromHex };
