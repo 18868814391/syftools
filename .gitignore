@@ -4,8 +4,6 @@
 .idea
 .vscode
 packages/**/lib
-lib/
-lib/*
 !lib/index.js
 !lib/style.css
 node_modules
