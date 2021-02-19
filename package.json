@@ -1,0 +1,20 @@
+{
+  "name": "syftools",
+  "version": "1.0.0",
+  "description": "syftools",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "build": "tsc"
+  },
+  "keywords": [
+    "syftools"
+  ],
+  "author": "syf",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "typescript": "^4.1.5"
+  }
+}
