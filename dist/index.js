@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fromHex = exports.numberFormat = exports.futureDay = exports.recentDay = exports.timeEver = exports.dateString = exports.timeStamp = exports.helloWorld = void 0;
+exports.syfdivide = exports.syfTimes = exports.syfMinus = exports.syfPlus = exports.queryStr = exports.queryObj = exports.fromHex = exports.numberFormat = exports.futureDay = exports.recentDay = exports.timeEver = exports.dateString = exports.timeStamp = exports.helloWorld = void 0;
 function helloWorld(a, b) {
     return a + b;
 }
@@ -144,7 +144,7 @@ function numberFormat(value) {
 }
 exports.numberFormat = numberFormat;
 function fromHex(hex) {
-    //将css的16进制颜色属性值，转变为rgb格式的对像
+    //将css的16进制颜色属性值，转变为rgb格式的对像  传入 #ff0000  输出{ b: 0, g: 0, r: 255, a: 1 }
     var t = {}, bits = hex.length == 4 ? 4 : 8, mask = (1 << bits) - 1;
     var color = Number('0x' + hex.substr(1));
     if (isNaN(color)) {
@@ -159,3 +159,99 @@ function fromHex(hex) {
     return t;
 }
 exports.fromHex = fromHex;
+function queryObj(query) {
+    var arr = query.split('&');
+    var obj = {};
+    arr.forEach(function (v, i, a) {
+        var arr_s = v.split('=');
+        obj[arr_s[0]] = arr_s[1];
+    });
+    return obj;
+}
+exports.queryObj = queryObj;
+function queryStr(query) {
+    //将{ name: 'liujintao', age: '28' }转成name=liujintao&age=28  
+    var arr = [];
+    for (var key in query) {
+        arr.push(key + "=" + query[key]);
+    }
+    return arr.join('&');
+}
+exports.queryStr = queryStr;
+function syfPlus(num1, num2) {
+    //两数精确加法
+    var r1 = 0, r2 = 0, m = 0;
+    try {
+        r1 = num1.toString().split(".")[1] ? num1.toString().split(".")[1].length : 0;
+    }
+    catch (_a) {
+        r1 = 0;
+    }
+    try {
+        r2 = num2.toString().split(".")[1] ? num2.toString().split(".")[1].length : 0;
+    }
+    catch (_b) {
+        r2 = 0;
+    }
+    m = Math.pow(10, Math.max(r1, r2));
+    return (num1 * m + num2 * m) / m;
+}
+exports.syfPlus = syfPlus;
+function syfMinus(num1, num2) {
+    //两数精确减法
+    var r1 = 0, r2 = 0, m = 0, n = 0;
+    try {
+        r1 = num1.toString().split(".")[1] ? num1.toString().split(".")[1].length : 0;
+    }
+    catch (_a) {
+        r1 = 0;
+    }
+    try {
+        r2 = num2.toString().split(".")[1] ? num2.toString().split(".")[1].length : 0;
+    }
+    catch (_b) {
+        r2 = 0;
+    }
+    m = Math.pow(10, Math.max(r1, r2));
+    n = (r1 >= r2) ? r1 : r1;
+    return Number(((num1 * m - num2 * m) / m).toFixed(n));
+}
+exports.syfMinus = syfMinus;
+function syfTimes(num1, num2) {
+    //两数精确乘法
+    var m = 0;
+    var s1 = num1.toString();
+    var s2 = num2.toString();
+    try {
+        m += s1.split(".")[1] ? s1.split(".")[1].length : 0;
+    }
+    catch (e) {
+        console.log(e);
+    }
+    try {
+        m += s2.split(".")[1] ? s2.split(".")[1].length : 0;
+    }
+    catch (e) {
+        console.log(e);
+    }
+    return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m);
+}
+exports.syfTimes = syfTimes;
+function syfdivide(num1, num2) {
+    //两数精确除法
+    var t1 = 0, t2 = 0, r1 = 0, r2 = 0;
+    try {
+        t1 = num1.toString().split(".")[1] ? num1.toString().split(".")[1].length : 0;
+    }
+    catch (e) {
+    }
+    try {
+        t2 = num2.toString().split(".")[1] ? num2.toString().split(".")[1].length : 0;
+    }
+    catch (e) {
+    }
+    r1 = Number(num1.toString().replace(".", ""));
+    r2 = Number(num2.toString().replace(".", ""));
+    return syfTimes((r1 / r2), Math.pow(10, t2 - t1));
+}
+exports.syfdivide = syfdivide;

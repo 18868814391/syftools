@@ -144,6 +144,103 @@ function fromHex(hex:string) : Object{
   return t  
 }
 
+function queryObj(query:string) : Object{
+  //将浏览器地址栏的name=liujintao&age=28转成对象  { name: 'liujintao', age: '28' }
+  interface qo {
+    [key: string]: any
+  }    
+  let arr:string[]=query.split('&')
+  let obj:qo={}
+  arr.forEach((v,i,a)=>{
+    let arr_s:string[]=v.split('=')
+    obj[arr_s[0]]=arr_s[1]
+  })
+  return obj
+}
+interface qo {
+  [key: string]: any
+}   
+function queryStr(query:qo) : string{
+  //将{ name: 'liujintao', age: '28' }转成name=liujintao&age=28  
+  let arr:string[]=[]
+  for(let key in query){
+    arr.push(`${key}=${query[key]}`)
+  }
+  return arr.join('&')
+}
+
+function syfPlus(num1:number,num2:number) : number{
+  //两数精确加法
+  let r1:number=0,r2:number=0,m:number=0
+  try{
+    r1=num1.toString().split(".")[1]?num1.toString().split(".")[1].length:0;
+  }catch{
+    r1=0
+  }
+  try{
+    r2=num2.toString().split(".")[1]?num2.toString().split(".")[1].length:0;
+  }catch{
+    r2=0
+  }
+  m=Math.pow(10, Math.max(r1, r2));
+  return (num1 * m + num2 * m) / m;
+}
+
+function syfMinus(num1:number,num2:number) : number{
+  //两数精确减法
+  let r1:number=0,r2:number=0,m:number=0,n:number=0
+  try{
+    r1=num1.toString().split(".")[1]?num1.toString().split(".")[1].length:0;
+  }catch{
+    r1=0
+  }
+  try{
+    r2=num2.toString().split(".")[1]?num2.toString().split(".")[1].length:0;
+  }catch{
+    r2=0
+  }
+  m=Math.pow(10,Math.max(r1, r2))
+  n=(r1>=r2)?r1:r1
+  return Number(((num1 * m - num2 * m) / m).toFixed(n))
+}
+
+function syfTimes(num1:number,num2:number) : number{
+  //两数精确乘法
+  let m:number=0
+  let s1:string=num1.toString()
+  let s2:string=num2.toString()
+  try{
+    m+=s1.split(".")[1]?s1.split(".")[1].length:0
+  }catch(e){
+    console.log(e)
+  }
+  try{
+    m+=s2.split(".")[1]?s2.split(".")[1].length:0
+  }catch(e){
+    console.log(e)
+  }
+  return Number(s1.replace(".",""))*Number(s2.replace(".",""))/Math.pow(10,m)
+}
+
+function syfdivide(num1:number,num2:number) : number{
+  //两数精确除法
+  let t1:number=0,t2:number=0,r1:number=0,r2:number=0
+  try{
+    t1=num1.toString().split(".")[1]?num1.toString().split(".")[1].length:0
+  }catch(e){
+
+  }
+  try{  
+    t2=num2.toString().split(".")[1]?num2.toString().split(".")[1].length:0
+  }catch(e){
+
+  }
+  r1=Number(num1.toString().replace(".",""))
+  r2=Number(num2.toString().replace(".",""))
+  return syfTimes((r1/r2),Math.pow(10,t2-t1))
+}
+
+
 export {
   timeStamp,
   dateString,
@@ -151,5 +248,11 @@ export {
   recentDay,
   futureDay,
   numberFormat,
-  fromHex
+  fromHex,
+  queryObj,
+  queryStr,
+  syfPlus,
+  syfMinus,
+  syfTimes,
+  syfdivide
 }

@@ -8,7 +8,12 @@ const recentDay=require('../dist/index').recentDay;
 const futureDay=require('../dist/index').futureDay;
 const numberFormat=require('../dist/index').numberFormat;
 const fromHex=require('../dist/index').fromHex;
-
+const queryObj=require('../dist/index').queryObj;
+const queryStr=require('../dist/index').queryStr;
+const syfPlus=require('../dist/index').syfPlus;
+const syfMinus=require('../dist/index').syfMinus;
+const syfTimes=require('../dist/index').syfTimes;
+const syfdivide=require('../dist/index').syfdivide;
 // describe('syf function test_add', () => {
 //   it('test_add', () => {
 //     const result = helloWorld('hello', 'world');
@@ -58,9 +63,51 @@ const fromHex=require('../dist/index').fromHex;
 //   });
 // });
 
-describe('syf function test_fromHex', () => {
-  it('test_fromHex', () => {
-    const result = fromHex('#ff0000');
+// describe('syf function test_fromHex', () => {
+//   it('test_fromHex', () => {
+//     const result = fromHex('#ff0000');
+//     console.log(result)
+//   });
+// });
+
+// describe('syf function test_queryObj', () => {
+//   it('test_queryObj', () => {
+//     const result = queryObj('name=liujintao');
+//     console.log(result)
+//   });
+// });
+
+// describe('syf function test_queryStr', () => {
+//   it('test_queryStr', () => {
+//     const result = queryStr({name:'123',age:22});
+//     console.log(result)
+//   });
+// });
+
+// describe('syf function test_syfPlus', () => {
+//   it('test_syfPlus', () => {
+//     const result = syfPlus(0.1,0.2);
+//     console.log(result)
+//   });
+// });
+
+// describe('syf function test_syfMinus', () => {
+//   it('test_syfMinus', () => {
+//     const result = syfMinus(0.4,0.1);
+//     console.log(result)
+//   });
+// });
+
+// describe('syf function test_syfTimes', () => {
+//   it('test_syfTimes', () => {
+//     const result = syfTimes(3,0.1);
+//     console.log(result)
+//   });
+// });
+
+describe('syf function test_syfdivide', () => {
+  it('test_syfdivide', () => {
+    const result = syfdivide(0.27,0.9);
     console.log(result)
   });
 });
