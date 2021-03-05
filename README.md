@@ -2,6 +2,7 @@
 npm install syftools --save
 # 使用
 import * as syftools from syftools; //全部引入
+
 import { timeStamp } from syftools; //按需引入
 # 功能
 1、timeStamp(date:string) : number
@@ -19,8 +20,11 @@ import { timeStamp } from syftools; //按需引入
 4、recentDay(days:number,strict:boolean=false,appoint:string='') : string[] 
 
   //获取今天开始最近n天的数组
+
   //当strict为false 输入7  输出['2021-2-19 00:00:00','2021-2-26 23:59:59'] 实际上有8天了 :)
+
   //当strict为true 输入7 输出['2021-2-19 15:21:15','2021-2-25 15:21:15'] 严格往前推7*24小时 :)
+  
   //appoint 可选参数 指定某天开始往前n天的数组 格式 '2021-2-19 15:21:15'
 
 5、futureDay(days:number,strict:boolean=false,appoint:string='') : string[]
@@ -58,3 +62,10 @@ import { timeStamp } from syftools; //按需引入
 13、syfdivide(num1:number,num2:number) : number
 
   //两数精确除法
+  
+14、getParams(key:string,url:string) : string
+
+  //从地址栏获取指定key的值  不传url为从window.location.search中获取
+
+15、debounce (func:any, wait:number, immediate:boolean) : any
+  // 防抖

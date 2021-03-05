@@ -14,6 +14,7 @@ const syfPlus=require('../dist/index').syfPlus;
 const syfMinus=require('../dist/index').syfMinus;
 const syfTimes=require('../dist/index').syfTimes;
 const syfdivide=require('../dist/index').syfdivide;
+const getParams=require('../dist/index').getParams;
 // describe('syf function test_add', () => {
 //   it('test_add', () => {
 //     const result = helloWorld('hello', 'world');
@@ -105,9 +106,16 @@ const syfdivide=require('../dist/index').syfdivide;
 //   });
 // });
 
-describe('syf function test_syfdivide', () => {
-  it('test_syfdivide', () => {
-    const result = syfdivide(0.27,0.9);
-    console.log(result)
+// describe('syf function test_syfdivide', () => {
+//   it('test_syfdivide', () => {
+//     const result = syfdivide(0.27,0.9);
+//     console.log(result)
+//   });
+// });
+
+describe('syf function test_getParams', () => {
+  it('test_getParams', () => {
+    const result = getParams('name','?name=syf&phone=1886');
+    console.log('iamres',result)
   });
 });
