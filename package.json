@@ -1,6 +1,6 @@
 {
   "name": "syftools",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "syftools",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "tsc"
   },
   "keywords": [
-    "syftools"
+    "常用","js方法","syftools"
   ],
   "author": "syf",
   "license": "ISC",

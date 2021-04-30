@@ -1,20 +1,20 @@
 'use strict';
 const expect = require('chai').expect;
 const helloWorld = require('../dist/index').helloWorld;
-const timeStamp=require('../dist/index').timeStamp;
-const dateString=require('../dist/index').dateString;
-const timeEver=require('../dist/index').timeEver;
-const recentDay=require('../dist/index').recentDay;
-const futureDay=require('../dist/index').futureDay;
-const numberFormat=require('../dist/index').numberFormat;
-const fromHex=require('../dist/index').fromHex;
-const queryObj=require('../dist/index').queryObj;
-const queryStr=require('../dist/index').queryStr;
-const syfPlus=require('../dist/index').syfPlus;
-const syfMinus=require('../dist/index').syfMinus;
-const syfTimes=require('../dist/index').syfTimes;
-const syfdivide=require('../dist/index').syfdivide;
-const getParams=require('../dist/index').getParams;
+const timeStamp = require('../dist/index').timeStamp;
+const dateString = require('../dist/index').dateString;
+const timeEver = require('../dist/index').timeEver;
+const recentDay = require('../dist/index').recentDay;
+const futureDay = require('../dist/index').futureDay;
+const numberFormat = require('../dist/index').numberFormat;
+const fromHex = require('../dist/index').fromHex;
+const queryObj = require('../dist/index').queryObj;
+const queryStr = require('../dist/index').queryStr;
+const syfPlus = require('../dist/index').syfPlus;
+const syfMinus = require('../dist/index').syfMinus;
+const syfTimes = require('../dist/index').syfTimes;
+const syfdivide = require('../dist/index').syfdivide;
+const getParams = require('../dist/index').getParams;
 // describe('syf function test_add', () => {
 //   it('test_add', () => {
 //     const result = helloWorld('hello', 'world');
@@ -115,7 +115,7 @@ const getParams=require('../dist/index').getParams;
 
 describe('syf function test_getParams', () => {
   it('test_getParams', () => {
-    const result = getParams('name','?name=syf&phone=1886');
-    console.log('iamres',result)
+    const result = getParams('roleType', '?roleType=1&id=272296333342289927&type=4');
+    console.log('iamres', result)
   });
 });
