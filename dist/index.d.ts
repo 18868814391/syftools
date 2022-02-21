@@ -1,3 +1,4 @@
+import syfConvert2Echarts from './syfConvert2Echarts';
 export declare function helloWorld(a: number, b: number): number;
 declare function timeStamp(date: string): number;
 declare function dateString(timeStamp: string | number): string;
@@ -17,4 +18,4 @@ declare function syfTimes(num1: number, num2: number): number;
 declare function syfdivide(num1: number, num2: number): number;
 declare function getParams(key: string, url: string): string;
 declare function debounce(func: any, wait: number, immediate: boolean): any;
-export { timeStamp, dateString, timeEver, recentDay, futureDay, numberFormat, fromHex, queryObj, queryStr, syfPlus, syfMinus, syfTimes, syfdivide, getParams, debounce };
+export { timeStamp, dateString, timeEver, recentDay, futureDay, numberFormat, fromHex, queryObj, queryStr, syfPlus, syfMinus, syfTimes, syfdivide, getParams, debounce, syfConvert2Echarts };

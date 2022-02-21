@@ -15,6 +15,7 @@ const syfMinus = require('../dist/index').syfMinus;
 const syfTimes = require('../dist/index').syfTimes;
 const syfdivide = require('../dist/index').syfdivide;
 const getParams = require('../dist/index').getParams;
+const syfConvert2Echarts=require('../dist/index').syfConvert2Echarts;
 // describe('syf function test_add', () => {
 //   it('test_add', () => {
 //     const result = helloWorld('hello', 'world');
@@ -113,9 +114,17 @@ const getParams = require('../dist/index').getParams;
 //   });
 // });
 
-describe('syf function test_getParams', () => {
+// describe('syf function test_getParams', () => {
+//   it('test_getParams', () => {
+//     const result = getParams('roleType', '?roleType=1&id=272296333342289927&type=4');
+//     console.log('iamres', result)
+//   });
+// });
+
+describe('syf function syfConvert2Echarts', () => {
   it('test_getParams', () => {
-    const result = getParams('roleType', '?roleType=1&id=272296333342289927&type=4');
+    let json={a:1}
+    const result = syfConvert2Echarts(json);
     console.log('iamres', result)
   });
 });

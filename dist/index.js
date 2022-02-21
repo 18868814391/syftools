@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.debounce = exports.getParams = exports.syfdivide = exports.syfTimes = exports.syfMinus = exports.syfPlus = exports.queryStr = exports.queryObj = exports.fromHex = exports.numberFormat = exports.futureDay = exports.recentDay = exports.timeEver = exports.dateString = exports.timeStamp = exports.helloWorld = void 0;
+exports.syfConvert2Echarts = exports.debounce = exports.getParams = exports.syfdivide = exports.syfTimes = exports.syfMinus = exports.syfPlus = exports.queryStr = exports.queryObj = exports.fromHex = exports.numberFormat = exports.futureDay = exports.recentDay = exports.timeEver = exports.dateString = exports.timeStamp = exports.helloWorld = void 0;
+var syfConvert2Echarts_1 = require("./syfConvert2Echarts");
+exports.syfConvert2Echarts = syfConvert2Echarts_1.default;
 function helloWorld(a, b) {
     return a + b;
 }

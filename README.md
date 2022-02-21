@@ -69,3 +69,6 @@ import { timeStamp } from 'syftools'; //按需引入
 
 15、debounce (func:any, wait:number, immediate:boolean) : any
   // 防抖
+
+16、syfConvert2Echarts (json:any) : any
+  // 将echarts地图信息加密压缩(从一大堆坐标数组变成一小堆@符号)

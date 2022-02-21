@@ -1,3 +1,4 @@
+import syfConvert2Echarts from './syfConvert2Echarts'
 export function helloWorld(a:number, b:number) : number {
   return a + b;
 }
@@ -300,5 +301,6 @@ export {
   syfTimes,
   syfdivide,
   getParams,
-  debounce
+  debounce,
+  syfConvert2Echarts
 }
